@@ -91,12 +91,15 @@ h3 {
 }
 
 #keyboard-help {
-	visibility: hidden;
-	background: white;
-	color: #333;
-	padding: 3px;
-	margin: 2px 5px;
-	font-size: 80%;
+	opacity: 0;
+	background: url("keyboard-help.png");
+	width: 130px;
+	height: 70px;
+	float: right;
+	margin-left: -130px;
+	position: relative;
+	left: 135px;
+	top: -12px;
 }
 		</style>
 	</head>
@@ -105,14 +108,15 @@ h3 {
 			<h1>PictureSlider <span class="colon">|</span> <span class="example">example</span></h1>
 		</div>
 		<div id="container">
-			<div id="keyboard-shortcuts"><span id="keyboard-help">⇦ previous | ⇨ next</span><a href="javascript:toggleKeyboardHelp()">Keyboard shortcuts</a></div>
+			<div id="keyboard-help" onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()"></div>
+			<div id="keyboard-shortcuts"><a onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()">Keyboard shortcuts</a></div>
 			<script type="text/javascript">
-function toggleKeyboardHelp() {
-	var kh = $('keyboard-help');
-	if (kh.getStyle('visibility') == 'hidden')
-		kh.setStyle('visibility', 'visible');
-	else
-		kh.setStyle('visibility', 'hidden');
+function activateKeyboardHelp() {
+	$('keyboard-help').set('tween', {'duration': 'short'});
+	$('keyboard-help').fade(1);
+}
+function deactivateKeyboardHelp() {
+	$('keyboard-help').fade(0);
 }
 			</script>
 			<div id="picture-slider" style="width: 1024px; height: 600px"></div>
