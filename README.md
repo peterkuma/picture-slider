@@ -96,7 +96,7 @@ The available options are described in the reference below.
 		},
 		text: {
 			duration: 500,
-		}
+		},
 	});
 
 
@@ -174,10 +174,10 @@ Fired when the slider is switched to another image.
 	pc.addEvent('change', function(image) {
 		if (image.src)
 			console.log('Switched to the image ' + image.src);
-	}
+	});
 
-Request Method: switchTo {#PictureSlider:switchTo}
---------------------------------------------------
+Request Method: `switchTo` {#PictureSlider:switchTo}
+----------------------------------------------------
 
 Switch to the image number n.
 
@@ -187,7 +187,7 @@ Switch to the image number n.
 
 ### Arguments:
 
-1. n - (*numer*) The index of the image starting from 0.
+1. n - (*number*) The index of the image starting from 0.
 
 ### Returns:
 
@@ -199,7 +199,7 @@ Switch to the image number n.
 		{'src': 'img1.jpg', caption: 'First image.' },
 		{'src': 'img2.jpg', caption: 'Second image.'},
 	]);
-	pc.switchTo(2) # Switch to the second image.
+	pc.switchTo(2) // Switch to the second image.
 	
 Request Method: left {#PictureSlider:left}
 ------------------------------------------
