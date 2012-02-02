@@ -23,8 +23,6 @@ body {
 #header {
 	position: absolute;
 	top: 0;
-	margin-top: 0;
-	margin-bottom: 20px;
 	padding: 0;
 	background: white;
 	width: 100%;
@@ -32,8 +30,15 @@ body {
 	box-shadow: 0 0 10px 10px #eeeeee;
 }
 
+#header a {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+}
+
 h1 {
-	margin: 10px;
+	margin: 0px;
 	color: #444;
 	font-family: 'Istok Web', helvetica, sans-serif;
 	font-size: 16pt;
@@ -105,7 +110,9 @@ h3 {
 	</head>
 	<body>
 		<div id="header">
-			<h1>PictureSlider <span class="colon">|</span> <span class="example">example</span></h1>
+			<a href="http://mootools.net/forge/p/pictureslider">
+				<h1>PictureSlider <span class="colon">|</span> <span class="example">example</span></h1>
+			</a>
 		</div>
 		<div id="container">
 			<div id="keyboard-help" onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()"></div>
