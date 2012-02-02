@@ -110,7 +110,7 @@ Animated picture slider.
 [Events][], [Options][]
 
 PictureSlider Method: contructor {#PictureSlider:constructor}
-=============================================================
+-------------------------------------------------------------
 
 ### Syntax:
 
