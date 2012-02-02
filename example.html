@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>PictureSlider Example</title>
+		<script src="http://mootools.net/download/get/mootools-core-1.4.3-full-nocompat-yc.js"></script>
+		<!-- MooTools More Keyboard component is required for keyboard support. -->
+		<!-- <script src="mootools-more.js"></script> -->
+		<script src="Source/picture-slider.js"></script>
+	    <link rel="stylesheet" type="text/css" href="Source/picture-slider.css" />
+    </head>
+	<body>
+		<div id="picture-slider" style="width: 900px; height: 600px"></div>
+		<script>
+			document.addEvent('domready', function() {
+				var pc = new PictureSlider($('picture-slider'), [
+					{
+						//src: 'image1.jpg',
+						content: 'This is frame 1',
+						caption: 'Caption of frame 1',
+					},
+					{
+						//src: 'image2.jpg',
+						content: 'This is frame 2',
+						caption: 'Caption of frame 2',
+					},
+				]);
+			});
+		</script>
+    </body>
+</html>
+
