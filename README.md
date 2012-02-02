@@ -5,8 +5,6 @@ PictureSlider allows you to create an unobtrusive and easy-to-control
 picture preview box, controlled by two arrows on the sides, or by keyboard.
 Optional caption is displayed in a panel at the bottom of the box.
 
-//![Screenshot](http://url_to_project_screenshot)
-
 How to use
 ----------
 
