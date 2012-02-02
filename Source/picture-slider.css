@@ -1,0 +1,107 @@
+/* pictureslide.css
+ * 
+ * Hierarchy of elements:
+ *   .picture-slider
+ *       .ps-controls
+ *           .ps-left
+ *		     .ps-right
+ *       .ps-sheet
+ *           .ps-frame
+ *               .ps-frame-content
+ *       .ps-caption
+ *		     p
+ */
+ 
+.picture-slider {
+	background: black;
+	position: relative;
+	overflow: hidden;
+}
+
+ps-controls {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.ps-sheet {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.ps-frame {
+	position: absolute;
+	top: 0;
+}
+
+.ps-frame-content {
+	position: absolute;
+	width: 100%;
+	margin: 20px;
+	font-family: helvetica, sans-serif;
+	font-size: 26pt;
+	color: white;
+	text-align: center;
+}
+
+.ps-frame-image {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+}
+
+.ps-frame-content a {
+	color: #94d4ff;
+	text-decoration: none;
+}
+
+.ps-left {
+	width: 30%;
+	background: url("leftarrow-medium.png") center left no-repeat;
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.ps-left-small {
+	background-image: url("leftarrow-small.png");
+}
+
+.ps-left-large {
+	background-image: url("leftarrow-large.png");
+}
+
+.ps-right {
+	width: 30%;
+	background: url("rightarrow-medium.png") center right no-repeat;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.ps-right-small {
+	background-image: url("rightarrow-small.png");
+}
+
+.ps-right-large {
+	background-image: url("rightarrow-large.png");
+}
+
+.ps-caption {
+	background: black;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	font-size: 10pt;
+	font-family: "Tahoma", sans-serif;
+}
+
+.ps-caption p {
+	margin: 10px;
+}
+
