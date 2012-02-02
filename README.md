@@ -100,7 +100,7 @@ The available options are described in the reference below.
 	});
 
 
-<h2>Class: PictureSlider</h2>
+<h2 class="green">Class: PictureSlider</h2>
 
 Animated picture slider.
 
