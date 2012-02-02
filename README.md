@@ -108,7 +108,7 @@ Animated picture slider.
 
 [Events][], [Options][]
 
-<h3>PictureSlider Method: contructor</h3>
+<h3 class="blue">PictureSlider Method: contructor</h3>
 
 ### Syntax:
 
@@ -174,7 +174,7 @@ Fired when the slider is switched to another image.
 			console.log('Switched to the image ' + image.src);
 	});
 
-<h3>PictureSlider Method: switchTo</h3>
+<h3 class="blue">PictureSlider Method: switchTo</h3>
 
 Switch to the image number n.
 
@@ -198,7 +198,7 @@ Switch to the image number n.
 	]);
 	pc.switchTo(2) // Switch to the second image.
 	
-<h3>PictureSlider Method: left</h3>
+<h3 class="blue">PictureSlider Method: left</h3>
 
 Switch to the image on the left.
 
@@ -210,7 +210,7 @@ Switch to the image on the left.
 
 * (*object*) The object of the image on the left.
 
-<h3>PictureSlider Method: right</h3>
+<h3 class="blue">PictureSlider Method: right</h3>
 
 Switch to the image on the right.
 
