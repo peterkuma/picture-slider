@@ -11,7 +11,7 @@ How to use
 ----------
 
 A div element can be turned into a picture slider by creating an instance
-of the PictureSlider class, supplying the an array of entries
+of the PictureSlider class, supplying an array of entries
 describing the image source and an optional caption:
 
 	<head>
@@ -23,7 +23,7 @@ describing the image source and an optional caption:
 	</head>
 	...
 
-    <div id="picture-slider" style="width: 900px; height: 600px" />
+    <div id="picture-slider" style="width: 900px; height: 600px"></div>
 	<script>
 		document.addEvent('domready', function() {
 			var pc = new PictureSlider($('picture-slider'), [
@@ -47,7 +47,7 @@ In addition to images, you can also supply HTML content:
 
 	var pc = new PictureSlider($('picture-slider'), [
 		{
-			content: 'Visit <a href=""></a>',
+			content: 'Text to appear inside the frame.',
 		}
 	]);
 	
@@ -177,7 +177,7 @@ Fired when the slider is switched to another image.
 	}
 
 Request Method: switchTo {#PictureSlider:switchTo}
---------------------------------------------
+--------------------------------------------------
 
 Switch to the image number n.
 
@@ -214,7 +214,7 @@ Switch to the image on the left.
 
 * (*object*) The object of the image on the left.
 
-RequestMethod: right {#PictureSlider:right}
+Request Method: right {#PictureSlider:right}
 -------------------------------------------
 
 Switch to the image on the right.
