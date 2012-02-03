@@ -208,8 +208,6 @@ var PictureSlider = new Class({
 				img.setStyle('height', this.height);
 			}
 			frame.appendChild(img);
-			var w = img.getStyle('width').toInt();
-			img.setStyle('left', (this.width-w)/2);
 			if (center) {
 				var h = img.getStyle('height').toInt();
 				img.setStyle('top', (this.height-h)/2);
