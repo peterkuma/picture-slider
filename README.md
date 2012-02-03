@@ -102,6 +102,9 @@ The available options are described in the reference below.
 Release notes
 -------------
 
+* 0.4 (2012-02-03):
+	- Fixed image scaling.
+	- Fixed vertical centering of frame content.
 * 0.3 (2012-02-03):
 	- Fixed interference between multiple picture sliders on a single page.
 * 0.2 (2012-02-03):
