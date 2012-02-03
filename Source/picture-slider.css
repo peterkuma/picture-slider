@@ -33,6 +33,7 @@ ps-controls {
 .ps-frame {
 	position: absolute;
 	top: 0;
+	text-decoration: none;
 }
 
 .ps-frame-content {
