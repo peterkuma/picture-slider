@@ -205,12 +205,12 @@ var PictureSlider = new Class({
 			var img = document.createElement('img');
 			img.addClass('ps-frame-image');
 			img.src = image.src;
+			frame.appendChild(img);
 			if (img.width/img.height > this.width/this.height) {
 				img.setStyle('width', this.width);
 			} else {
 				img.setStyle('height', this.height);
 			}
-			frame.appendChild(img);
 			if (center) {
 				var h = img.getStyle('height').toInt();
 				img.setStyle('top', (this.height-h)/2);
