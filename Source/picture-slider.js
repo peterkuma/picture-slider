@@ -205,12 +205,12 @@ var PictureSlider = new Class({
 			var img = document.createElement('img');
 			img.addClass('ps-frame-image');
 			img.src = image.src;
+			frame.appendChild(img);
 			if (img.width/img.height > this.width/this.height) {
 				img.setStyle('width', this.width);
 			} else {
 				img.setStyle('height', this.height);
 			}
-			frame.appendChild(img);
 			if (center) {
 				var h = img.getStyle('height').toInt();
 				img.setStyle('top', (this.height-h)/2);
@@ -236,7 +236,9 @@ var PictureSlider = new Class({
 		    			  content.getStyle('padding-bottom').toInt();
 		 		var mar = content.getStyle('margin-top').toInt() +
 		   				  content.getStyle('margin-bottom').toInt();
-				content.setStyle('top', (this.height-h-pad-mar)/2);
+		   		var top = (this.height-h-pad-mar)/2;
+		   		if (top > 0)
+					content.setStyle('top', (this.height-h-pad-mar)/2);
 			}
 		}
 		
