@@ -236,7 +236,9 @@ var PictureSlider = new Class({
 		    			  content.getStyle('padding-bottom').toInt();
 		 		var mar = content.getStyle('margin-top').toInt() +
 		   				  content.getStyle('margin-bottom').toInt();
-				content.setStyle('top', (this.height-h-pad-mar)/2);
+		   		var top = (this.height-h-pad-mar)/2;
+		   		if (top > 0)
+					content.setStyle('top', (this.height-h-pad-mar)/2);
 			}
 		}
 		
