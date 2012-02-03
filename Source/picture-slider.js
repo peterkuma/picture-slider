@@ -40,7 +40,7 @@ var PictureSlider = new Class({
 
 	initialize: function(obj, images, options) {
 		this.setOptions(options);
-		this_ = this;
+		var this_ = this;
 		
 		this.images = [];
 		this.current = null;
@@ -105,15 +105,16 @@ var PictureSlider = new Class({
 		this.obj.addEvent('mouseout', function() { this_.deactivateControls(); });
 		
 		/* Keyboard control. */
+		this.kb = null;
 		if (typeof Keyboard != 'undefined') {
-			var kb = new Keyboard({
+			this.kb = new Keyboard({
 				defaultEventType: 'keydown',
 				events: {
 					'left': function() { this_.left(); },
 					'right': function() { this_.right(); },
 				},
 			});
-			kb.activate();
+			this.kb.activate();
 		}
 		
 		/* Switch to the first image. */	
@@ -122,6 +123,8 @@ var PictureSlider = new Class({
 	
 	activateControls: function() {
 		this.controls.fade(this.options.controls.opacity);
+		/* The last to get focus gets the keyboard. */
+		if (this.kb) this.kb.activate();
 	},
 	
 	deactivateControls: function() {
