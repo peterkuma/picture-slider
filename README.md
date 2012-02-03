@@ -99,6 +99,14 @@ The available options are described in the reference below.
 		},
 	});
 
+Release notes
+-------------
+
+* 0.2 (2012-02-03):
+	- Fixed horizontal centering of frame content.
+* 0.1 (2012-02-02):
+	- Initial release.
+
 
 <h2 class="green">Class: PictureSlider</h2>
 
