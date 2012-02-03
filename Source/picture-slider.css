@@ -37,7 +37,7 @@ ps-controls {
 }
 
 .ps-frame-content {
-	position: relative;
+	position: absolute;
 	margin: 20px;
 	font-family: helvetica, sans-serif;
 	font-size: 26pt;
@@ -47,7 +47,8 @@ ps-controls {
 
 .ps-frame-image {
 	display: block;
-	position: absolute;
+	position: relative;
+	margin: 0 auto;
 }
 
 .ps-frame-content a {
