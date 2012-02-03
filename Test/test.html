@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>PictureSlider Test</title>
+		<script src="http://mootools.net/download/get/mootools-core-1.4.3-full-nocompat-yc.js"></script>
+		<script src="mootools-more-1.4.0.1.js"></script>
+		<script src="../Source/picture-slider.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../Source/picture-slider.css" />
+    </head>
+	<body>
+		<h1>PictureSlider Test</h1>
+		<h2>General</h2>
+		<div id="pc-general" style="width: 900px; height: 600px"></div>
+		<script>
+			document.addEvent('domready', function() {
+				var pc = new PictureSlider($('pc-general'), [
+					{
+						src: 'box-900x600.png',
+						content: '900x600',
+						caption: 'A box of exact size',
+					},
+					{
+						src: 'box-900x300.png',
+						content: '900x300',
+						caption: 'A box narrow in the vertical.',
+					},
+					{
+						src: 'box-300x900.png',
+						content: '300x900',
+						caption: 'A box narrow in the horizontal.',
+					},
+					{
+						src: 'box-300x300.png',
+						content: '300x300',
+						caption: 'A box narrow in both directions.',
+					},
+					{
+						content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque volutpat purus non ante malesuada eu fermentum nibh interdum. Nunc sagittis mattis tellus ut porta. Vestibulum sagittis neque sit amet augue mattis ornare. Aenean varius ipsum sed purus condimentum eleifend. Curabitur euismod cursus dolor in bibendum. Fusce sit amet lorem tellus. Proin in odio elit. Integer pretium augue a purus tempus nec lacinia ante porttitor. Etiam eu hendrerit risus. Maecenas gravida mi et neque ultrices eu porttitor massa fringilla. Nullam placerat ullamcorper nunc id mollis. Donec quam justo, porttitor nec congue sed, blandit quis odio. Suspendisse ante purus, tempus eu volutpat nec, imperdiet at orci. Morbi sed sem dolor, in facilisis diam. Vivamus eros massa, ornare sodales luctus at, interdum dignissim turpis. Nunc in ante quis purus euismod facilisis non at ante. Phasellus leo augue, sollicitudin vel iaculis ut, dapibus eu diam. Nullam rhoncus, felis a scelerisque bibendum, mi nunc venenatis felis, et viverra lorem metus euismod metus. In erat erat, pellentesque ut dapibus sed, consequat id arcu. Ut eleifend venenatis turpis, eget dignissim tortor aliquam nec.',
+						caption: 'Too long content',
+					},
+					{
+						content: '<a href="http://mootools.net">MooTools</a>',
+						caption: 'Hyperlink',
+					},
+					{
+						content: 'Frame as a hyperlink',
+						link: 'http://mootools.net',
+					},
+					{
+						content: '</p>No vertical centering</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque volutpat purus non ante malesuada eu fermentum nibh interdum. Nunc sagittis mattis tellus ut porta. Vestibulum sagittis neque sit amet augue mattis ornare. Aenean varius ipsum sed purus condimentum eleifend. Curabitur euismod cursus dolor in bibendum. Fusce sit amet lorem tellus. Proin in odio elit. Integer pretium augue a purus tempus nec lacinia ante porttitor. Etiam eu hendrerit risus. Maecenas gravida mi et neque ultrices eu porttitor massa fringilla. Nullam placerat ullamcorper nunc id mollis. Donec quam justo, porttitor nec congue sed, blandit quis odio. Suspendisse ante purus, tempus eu volutpat nec, imperdiet at orci.</p>',
+						center: false,
+					},
+					{
+						content: 'Overly long caption',
+						caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt posuere neque, a pretium velit aliquet et. Quisque sit amet aliquam lacus. Vestibulum et sem pellentesque purus condimentum rutrum. Aliquam cursus arcu at massa aliquam sagittis. Cras eget odio nec augue lacinia porta. Vestibulum nec suscipit purus. Phasellus nec nulla augue, imperdiet pulvinar mauris. Vestibulum ipsum purus, suscipit non ornare id, eleifend eu sem. Suspendisse sit amet velit sed est placerat facilisis. Etiam mollis, ligula eget venenatis laoreet, tortor mi consectetur ligula, in congue erat velit a massa. Maecenas eget elit placerat massa ultrices tempor sit amet quis massa. Curabitur tortor ligula, adipiscing euismod pulvinar in, eleifend ultrices magna. Morbi in erat nibh. In placerat metus in velit vulputate pellentesque. Nullam ornare, metus eget condimentum laoreet, nunc eros sagittis urna, nec luctus massa ipsum at lacus. Phasellus neque magna, egestas ut euismod eu, accumsan et ante. In tincidunt laoreet venenatis. Pellentesque ullamcorper mi sed nibh tristique at eleifend metus commodo. Morbi eu nulla tortor, eu porta nibh. Aliquam erat volutpat. Maecenas mi elit, pulvinar sed elementum a, lobortis gravida enim. Proin auctor risus vel justo fermentum facilisis. Proin quis vulputate quam. Proin eget lacus eu turpis luctus egestas et at metus. Morbi pulvinar pulvinar nibh eget bibendum. Aenean ut urna a urna iaculis dapibus. Proin tristique pulvinar sem, vel sodales lectus lacinia in. Donec leo dui, ornare vitae mollis eu, mattis vitae enim. Phasellus odio erat, rhoncus at facilisis in, cursus at justo. Pellentesque aliquet ullamcorper augue, ut rhoncus diam semper et. In ac metus at arcu accumsan suscipit. Proin metus lectus, adipiscing vitae adipiscing eget, mollis nec nisi. Nullam nisl urna, eleifend at dictum eu, molestie id ligula. Phasellus venenatis dictum urna, ut venenatis tortor blandit in. Aliquam pulvinar semper dui, eget eleifend libero pulvinar id. Nulla ante justo, pellentesque ut dignissim at, posuere in libero. Nullam neque augue, gravida vel convallis non, interdum non sapien. Nam quis vulputate leo. Mauris consequat nisl eu nisl tincidunt mattis. Cras interdum blandit interdum. Curabitur gravida nisl et tortor rhoncus suscipit. Morbi lobortis urna quis orci elementum id vestibulum ipsum dapibus. Praesent posuere iaculis quam nec tincidunt. Cras vitae erat magna. Mauris convallis dapibus risus non consequat. Nulla facilisi. Vivamus sit amet sapien sed dui pellentesque tincidunt. Phasellus at libero felis. In auctor mauris a velit mattis fringilla lobortis id odio. Etiam eu nibh eros, aliquam consequat sapien. In hac habitasse platea dictumst. Proin at turpis vitae neque suscipit imperdiet. In eu tellus eget arcu tincidunt rhoncus. Vestibulum lacinia consectetur sem, sed commodo velit adipiscing auctor. Curabitur in felis diam, nec mollis enim. Pellentesque consequat egestas feugiat. Fusce hendrerit, ipsum quis ultrices dignissim, urna purus tincidunt dolor, eu iaculis lectus felis quis lorem. Integer dui ipsum, congue quis congue vel, fermentum a arcu. Maecenas dictum ultrices arcu, non porttitor purus sodales quis. Vivamus orci turpis, bibendum eu fermentum vitae, venenatis eget metus. Phasellus faucibus elit et tortor vestibulum accumsan. Morbi ut lectus orci, ac ultricies enim. Maecenas quis justo nec lectus scelerisque convallis a eget leo. Vivamus euismod laoreet augue, nec elementum arcu fringilla at. Curabitur leo arcu, ultrices ac dapibus nec, volutpat eu diam. Duis mi leo, fermentum a porttitor quis, venenatis accumsan enim. Morbi mauris lacus, tincidunt sollicitudin ullamcorper sed, ullamcorper et lacus. Nullam fermentum tempor sapien, id faucibus urna tincidunt vel. Sed metus neque, porttitor vel auctor vitae, porta quis neque. Aenean sed dui mi. Duis ornare arcu eget massa scelerisque sodales vitae in dui. Donec eu massa sed nibh pretium euismod id sit amet nisi. Suspendisse potenti. Morbi ac faucibus enim. Vestibulum non ante quam. Donec ut mattis ante. Duis non volutpat libero. Suspendisse vel lacus eget orci semper ultrices non non lorem. Nulla eget felis arcu. Vestibulum rutrum arcu eu magna ultrices aliquet. Suspendisse ultricies urna tincidunt urna laoreet scelerisque. Curabitur non odio ante. Duis odio nulla, varius ac lacinia ut, luctus vel turpis. Nulla facilisi. Morbi rhoncus vulputate aliquam. Duis quis velit et odio scelerisque pellentesque vitae ac purus. Nam nibh mauris, iaculis a auctor eget, condimentum id erat. Vestibulum aliquet, dui nec placerat ullamcorper, sem diam ultrices sapien, et lobortis metus felis at magna. Nam sit amet placerat magna. Aenean vel elit sed turpis fermentum pulvinar. Praesent cursus vulputate diam at volutpat. Ut a turpis odio, id tristique lacus. Maecenas at sem vel ligula cursus tempus sed vel justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed tortor quam, aliquet eget mollis vitae, elementum nec lacus. Vestibulum aliquam arcu at ipsum luctus ac condimentum velit consequat. Integer et lacus dui, nec vulputate risus. Integer lobortis lacinia fringilla. Maecenas consectetur porta enim, vel auctor sapien malesuada a. Donec diam magna, viverra sed ullamcorper et, ultricies in nisi. Nullam vitae erat leo, non pellentesque leo. Maecenas aliquam interdum urna at mollis. Sed eu quam sed dolor tincidunt consectetur. Mauris quis tortor tincidunt eros sollicitudin rhoncus a eu lacus. Proin eros velit, vestibulum sed porttitor consectetur, pellentesque sed metus. Aenean tristique, sem non gravida tempor, neque metus elementum dolor, sit amet vehicula sapien lorem sed lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam porta orci sed nulla tristique euismod. Aenean non vulputate augue. Suspendisse potenti. ',
+					}
+				],{
+					caption: {
+						opacity: 0.7,
+					},
+				});
+			});
+		</script>
+		<h2>Arrows</h2>
+		<div id="pc-arrows-small" style="width: 200px; height: 100px; float: left;"></div>
+		<script>
+			document.addEvent('domready', function() {
+				var pc = new PictureSlider($('pc-arrows-small'), [
+					{
+						content: 'Small',
+					},
+					{
+						content: 'arrows',
+					},
+					{
+						content: 'here',
+					},
+				], {
+					arrows: 'small'
+				});
+			});
+		</script>
+		<div id="pc-arrows-large" style="width: 200px; height: 100px"></div>
+		<script>
+			document.addEvent('domready', function() {
+				var pc = new PictureSlider($('pc-arrows-large'), [
+					{
+						content: 'Large',
+					},
+					{
+						content: 'arrows',
+					},
+					{
+						content: 'here',
+					},
+				], {
+					arrows: 'large'
+				});
+			});
+		</script>
+    </body>
+</html>
+
