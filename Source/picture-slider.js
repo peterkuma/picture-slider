@@ -208,8 +208,6 @@ var PictureSlider = new Class({
 				img.setStyle('height', this.height);
 			}
 			frame.appendChild(img);
-			var w = img.getStyle('width').toInt();
-			img.setStyle('left', (this.width-w)/2);
 			if (center) {
 				var h = img.getStyle('height').toInt();
 				img.setStyle('top', (this.height-h)/2);
@@ -223,6 +221,12 @@ var PictureSlider = new Class({
 			if (typeof image.content == 'string') {
 				content.innerHTML = image.content;
 			}
+			var w = content.getStyle('width').toInt();
+			var pad = content.getStyle('padding-left').toInt() +
+		    		  content.getStyle('padding-right').toInt();
+		 	var mar = content.getStyle('margin-left').toInt() +
+		   			  content.getStyle('margin-right').toInt();
+			content.setStyle('left', (this.width-w-pad-mar)/2);
 			if (center) {
 				var h = content.getStyle('height').toInt();
 				var pad = content.getStyle('padding-top').toInt() +
