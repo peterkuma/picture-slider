@@ -206,15 +206,15 @@ var PictureSlider = new Class({
 			img.addClass('ps-frame-image');
 			img.src = image.src;
 			frame.appendChild(img);
-			if (img.width/img.height > this.width/this.height) {
-				img.setStyle('width', this.width);
-			} else {
-				img.setStyle('height', this.height);
-			}
-			if (center) {
-				var h = img.getStyle('height').toInt();
-				img.setStyle('top', (this.height-h)/2);
-			}
+			img.addEvent('load', function() {
+				if (img.width/img.height > this_.width/this_.height) {
+					img.width = this_.width;
+				} else {
+					img.height = this_.height;
+				}
+				if (center)
+					img.setStyle('top', (this_.height-img.height)/2);
+			});
 		}
 		
 		if (image.content) {
