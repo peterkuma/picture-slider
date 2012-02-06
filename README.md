@@ -69,7 +69,7 @@ The picture slider can be styled by amending
 or extending the CSS defined in Source/picture-slider.css.
 
 Options can be supplied as the third argument to the constructor.
-The available options are described in the reference below.
+The options available are described in the reference below.
 
 ### Example:
 
@@ -209,7 +209,7 @@ Switch to the image number n.
 		{'src': 'img1.jpg', caption: 'First image.' },
 		{'src': 'img2.jpg', caption: 'Second image.'},
 	]);
-	pc.switchTo(2) // Switch to the second image.
+	pc.switchTo(1) // Switch to the second image.
 	
 <h3 class="blue">PictureSlider Method: left</h3>
 
