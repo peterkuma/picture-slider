@@ -223,7 +223,7 @@ var PictureSlider = new Class({
 			content.addClass('ps-frame-content');
 			frame.appendChild(content);
 			if (typeof image.content == 'string') {
-				content.innerHTML = image.content;
+				content.set('html', image.content);
 			}
 			var w = content.getStyle('width').toInt();
 			var pad = content.getStyle('padding-left').toInt() +
