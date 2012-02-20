@@ -102,6 +102,8 @@ The options available are described in the reference below.
 Release notes
 -------------
 
+* 0.6 (2012-02-20):
+	- Fixed a number of issues with IE7.
 * 0.5 (2012-02-20):
 	- Fixed interference between multiple picture sliders on a single page.
 * 0.4 (2012-02-03):
