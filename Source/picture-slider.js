@@ -27,14 +27,14 @@ var PictureSlider = new Class({
 		center: true,
 		controls: {
 			opacity: 0.8,
-			duration: 'short',
+			duration: 'short'
 		},
 		caption: {
 			opacity: 0.8,
-			duration: 'short',
+			duration: 'short'
 		},
 		text: {
-			duration: 200,
+			duration: 200
 		}
 	},
 
@@ -53,7 +53,7 @@ var PictureSlider = new Class({
 		this.height = obj.getStyle('height').toInt();	
 	
 		/* Sheet. */
-		this.sheet = document.createElement('div');
+		this.sheet = new Element('div');
 		this.sheet.addClass('ps-sheet');
 		this.sheet.setStyle('width', this.width);
 		this.sheet.setStyle('height', this.height);
@@ -63,17 +63,17 @@ var PictureSlider = new Class({
 		images.each(function(image) { this_.appendImage(image); });
 		
 		/* Bottom description panel. */
-		this.caption = document.createElement('div');
+		this.caption = new Element('div');
 		this.caption.addClass('ps-caption');
 		this.caption.setStyle('height', 0);
 		this.caption.setStyle('opacity', this.options.caption.opacity);
-		this.caption.p = document.createElement('p');
+		this.caption.p = new Element('p');
 		this.caption.p.set('tween', {duration: this.options.caption.duration});
 		this.caption.appendChild(this.caption.p);
 		this.obj.appendChild(this.caption);
 		
 		/* Controls. */
-		this.controls = document.createElement('div');
+		this.controls = new Element('div');
 		this.controls.addClass('ps-controls');
 		this.controls.setStyle('width', this.width);
 		this.controls.setStyle('height', this.height);
@@ -81,7 +81,7 @@ var PictureSlider = new Class({
 		this.controls.set('tween',  {duration: this.options.controls.duration});
 		this.obj.appendChild(this.controls);
 		
-		this.leftArrow = document.createElement('div');
+		this.leftArrow = new Element('div');
 		this.leftArrow.addClass('ps-left');
 		if (this.options.arrows)
 			this.leftArrow.addClass('ps-left-'+this.options.arrows);
@@ -91,7 +91,7 @@ var PictureSlider = new Class({
 		this.leftArrow.addEvent('click', function() { this_.left(); });
 		this.controls.appendChild(this.leftArrow);
 	
-		this.rightArrow = document.createElement('div');
+		this.rightArrow = new Element('div');
 		this.rightArrow.addClass('ps-right');
 		if (this.options.arrows)
 			this.rightArrow.addClass('ps-right-'+this.options.arrows);
@@ -111,8 +111,8 @@ var PictureSlider = new Class({
 				defaultEventType: 'keydown',
 				events: {
 					'left': function() { this_.left(); },
-					'right': function() { this_.right(); },
-				},
+					'right': function() { this_.right(); }
+				}
 			});
 			this.kb.activate();
 		}
@@ -186,10 +186,10 @@ var PictureSlider = new Class({
 	appendImage: function(image) {
 		var frame;
 		if (image.link) {
-			frame = document.createElement('a');
+			frame = new Element('a');
 			frame.href = image.link;
 		} else {
-			frame = document.createElement('div');
+			frame = new Element('div');
 		}
 		frame.addClass('ps-frame');
 		frame.setStyle('left', this.width*this.images.length);
@@ -202,7 +202,7 @@ var PictureSlider = new Class({
 			center = image.center;
 		
 		if (image.src) {
-			var img = document.createElement('img');
+			var img = new Element('img');
 			img.addClass('ps-frame-image');
 			img.src = image.src;
 			frame.appendChild(img);
@@ -219,7 +219,7 @@ var PictureSlider = new Class({
 		}
 		
 		if (image.content) {
-			var content = document.createElement('div');
+			var content = new Element('div');
 			content.addClass('ps-frame-content');
 			frame.appendChild(content);
 			if (typeof image.content == 'string') {
@@ -253,7 +253,7 @@ var PictureSlider = new Class({
 		var fx = new Fx.Tween(this.caption, {
 			duration: this.options.text.duration,
 			property: 'height',
-			link: 'chain',
+			link: 'chain'
 		});
 		
 		if (text) {
@@ -263,10 +263,10 @@ var PictureSlider = new Class({
 				this_.caption.p.fade(1);
 			});
 			this.caption.p.fade(0);
-			var tmpcaption = document.createElement('div');
+			var tmpcaption = new Element('div');
 			tmpcaption.addClass('ps-caption');
 			tmpcaption.setStyle('visibility', 'hidden');
-			tmpcaption.p = document.createElement('p');
+			tmpcaption.p = new Element('p');
 			tmpcaption.p.innerHTML = text;
 			tmpcaption.appendChild(tmpcaption.p);
 			this.obj.appendChild(tmpcaption);
@@ -278,187 +278,6 @@ var PictureSlider = new Class({
 			this.caption.p.fade(0);
 			fx.start(0);		
 		}
-	},
+	}
 });
 
-/*
- * Turn obj into an interactive image gallery.
- *
- * Example:
- *
- * <div id="gallery" style="width: 900px; height: 600px" />
- * <script>
- * document.addEvent('domready', function() {
- *     gallery($('gallery'), {
- *         images: [
- *             {
- *                 src: 'image1.jpg',
- *                 desc: 'Description of image1.',
- *             },
- *             {
- *                 src: 'image2.jpg',
- *                 desc: 'Description of image2.',
- *             },
- *         ]
- *     });
- * });
- * </script>
- */
-function gallery(obj, options) {
-	if (!options.images)
-		options.images = new Array();
-
-	obj.addClass('gallery');
-	
-	/* Sheet. */
-	var sheet = document.createElement('div');
-	sheet.addClass('gallery-sheet');
-	
-	var width = obj.getStyle('width').toInt();
-	var height = obj.getStyle('height').toInt();
-	
-	sheet.setStyle('width', width);
-	sheet.setStyle('height', height);
-	
-	/* Place images on the sheet. */
-	var offset = 0;
-	options.images.each(function(image) {
-		var wrapper = document.createElement('div');
-		wrapper.addClass('gallery-wrapper');
-		wrapper.setStyle('position', 'absolute');
-		wrapper.setStyle('top', 0);
-		wrapper.setStyle('left', offset);
-		wrapper.setStyle('width', width);
-		wrapper.setStyle('height', height);
-		sheet.appendChild(wrapper);
-
-		var img = document.createElement('img');
-		img.src = image.src;
-		img.height = height;
-		img.setStyle('display', 'block');
-		img.setStyle('margin', '0 auto');
-		wrapper.appendChild(img);
-
-		offset += width;
-	});	
-	obj.appendChild(sheet);	
-	
-	/* Bottom description panel. */
-	var desc = document.createElement('div');
-	desc.addClass('gallery-desc');
-	desc.setStyle('height', 0);
-	desc.setStyle('opacity', 0.7);
-	desc.p = document.createElement('p');
-	desc.set('tween', {duration: 'short'});
-	desc.appendChild(desc.p);
-
-	function updateDesc(n) {
-		var descFx = new Fx.Tween(desc, {
-			duration: 300,
-			property: 'height',
-			link: 'chain',
-		});
-		
-		if (options.images.length > n && options.images[n].desc) {
-			/* Alter height. */
-			descFx.addEvent('complete', function() {
-				desc.p.innerHTML = options.images[n].desc;
-				desc.p.fade(1);
-			});
-			desc.p.fade(0);
-			var tmpdesc = document.createElement('div');
-			tmpdesc.addClass('gallery-desc');
-			tmpdesc.setStyle('visibility', 'hidden');
-			tmpdesc.p = document.createElement('p');
-			tmpdesc.p.innerHTML = options.images[n].desc;
-			tmpdesc.appendChild(tmpdesc.p);
-			obj.appendChild(tmpdesc);
-			h = tmpdesc.getStyle('height');
-			obj.removeChild(tmpdesc);
-			descFx.start(h);
-		} else {
-			desc.p.innerHTML = '';
-			desc.p.fade(0);
-			descFx.start(0);
-		}
-	}
-	updateDesc(0);
-	
-	/* Image switching (left and right arrows). */
-	var n = 0;
-	
-	var mouseover = 0;
-	
-	function switchTo(n) {
-		var fx = new Fx.Tween(sheet, {
-			duration: 'short',
-			property: 'left'
-		});
-		fx.start(-n*width);
-		updateDesc(n);
-		if (n == 0)
-			leftArrow.fade(0);
-		else
-			leftArrow.fade(mouseover*0.8);
-		if (n == options.images.length - 1)
-			rightArrow.fade(0);
-		else
-			rightArrow.fade(mouseover*0.8);
-	}
- 	
-	var leftArrow = document.createElement('div');
-	leftArrow.addClass('gallery-left');
-	leftArrow.setStyle('width', width*0.3);
-	leftArrow.setStyle('height', height);
-	leftArrow.setStyle('opacity', 0);
-	leftArrow.addEvent('click', function() {
-		if (n > 0) switchTo(n = n-1);
-	});
-	obj.appendChild(leftArrow);
-	
-	var rightArrow = document.createElement('div');
-	rightArrow.addClass('gallery-right');
-	rightArrow.setStyle('width', width*0.3);
-	rightArrow.setStyle('height', height);
-	rightArrow.setStyle('opacity', 0);
-	rightArrow.addEvent('click', function() {
-		if (n < options.images.length - 1) switchTo(n = n+1);
-	});
-	
-	rightArrow.set('tween', {duration: 'short'});
-	leftArrow.set('tween',  {duration: 'short'});
-	
-	obj.addEvent('mouseover', function() {
-		mouseover = 1;
-		if (n > 0)
-			leftArrow.fade(0.8);
-		if (n < options.images.length - 1)
-			rightArrow.fade(0.8);
-	});
-	
-	obj.addEvent('mouseout', function() {
-		mouseover = 0;
-		leftArrow.fade(0);
-		rightArrow.fade(0);
-	});
-	
-	/* Keyboard control. */
-	if (typeof Keyboard != 'undefined') {
-		var kb = new Keyboard({
-			defaultEventType: 'keydown',
-			events: {
-				'left': function() {
-					if (n > 0) switchTo(n = n-1);
-				},
-				'right': function() {
-					if (n < options.images.length - 1) switchTo(n = n+1);
-				}
-			}
-		});
-		kb.activate();
-	}
-	
-	obj.appendChild(desc);
-	obj.appendChild(leftArrow);
-	obj.appendChild(rightArrow);
-}
