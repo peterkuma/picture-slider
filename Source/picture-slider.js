@@ -53,7 +53,7 @@ var PictureSlider = new Class({
 		this.height = obj.getStyle('height').toInt();	
 	
 		/* Sheet. */
-		this.sheet = document.createElement('div');
+		this.sheet = new Element('div');
 		this.sheet.addClass('ps-sheet');
 		this.sheet.setStyle('width', this.width);
 		this.sheet.setStyle('height', this.height);
@@ -63,17 +63,17 @@ var PictureSlider = new Class({
 		images.each(function(image) { this_.appendImage(image); });
 		
 		/* Bottom description panel. */
-		this.caption = document.createElement('div');
+		this.caption = new Element('div');
 		this.caption.addClass('ps-caption');
 		this.caption.setStyle('height', 0);
 		this.caption.setStyle('opacity', this.options.caption.opacity);
-		this.caption.p = document.createElement('p');
+		this.caption.p = new Element('p');
 		this.caption.p.set('tween', {duration: this.options.caption.duration});
 		this.caption.appendChild(this.caption.p);
 		this.obj.appendChild(this.caption);
 		
 		/* Controls. */
-		this.controls = document.createElement('div');
+		this.controls = new Element('div');
 		this.controls.addClass('ps-controls');
 		this.controls.setStyle('width', this.width);
 		this.controls.setStyle('height', this.height);
@@ -81,7 +81,7 @@ var PictureSlider = new Class({
 		this.controls.set('tween',  {duration: this.options.controls.duration});
 		this.obj.appendChild(this.controls);
 		
-		this.leftArrow = document.createElement('div');
+		this.leftArrow = new Element('div');
 		this.leftArrow.addClass('ps-left');
 		if (this.options.arrows)
 			this.leftArrow.addClass('ps-left-'+this.options.arrows);
@@ -91,7 +91,7 @@ var PictureSlider = new Class({
 		this.leftArrow.addEvent('click', function() { this_.left(); });
 		this.controls.appendChild(this.leftArrow);
 	
-		this.rightArrow = document.createElement('div');
+		this.rightArrow = new Element('div');
 		this.rightArrow.addClass('ps-right');
 		if (this.options.arrows)
 			this.rightArrow.addClass('ps-right-'+this.options.arrows);
@@ -186,10 +186,10 @@ var PictureSlider = new Class({
 	appendImage: function(image) {
 		var frame;
 		if (image.link) {
-			frame = document.createElement('a');
+			frame = new Element('a');
 			frame.href = image.link;
 		} else {
-			frame = document.createElement('div');
+			frame = new Element('div');
 		}
 		frame.addClass('ps-frame');
 		frame.setStyle('left', this.width*this.images.length);
@@ -202,7 +202,7 @@ var PictureSlider = new Class({
 			center = image.center;
 		
 		if (image.src) {
-			var img = document.createElement('img');
+			var img = new Element('img');
 			img.addClass('ps-frame-image');
 			img.src = image.src;
 			frame.appendChild(img);
@@ -219,7 +219,7 @@ var PictureSlider = new Class({
 		}
 		
 		if (image.content) {
-			var content = document.createElement('div');
+			var content = new Element('div');
 			content.addClass('ps-frame-content');
 			frame.appendChild(content);
 			if (typeof image.content == 'string') {
@@ -263,10 +263,10 @@ var PictureSlider = new Class({
 				this_.caption.p.fade(1);
 			});
 			this.caption.p.fade(0);
-			var tmpcaption = document.createElement('div');
+			var tmpcaption = new Element('div');
 			tmpcaption.addClass('ps-caption');
 			tmpcaption.setStyle('visibility', 'hidden');
-			tmpcaption.p = document.createElement('p');
+			tmpcaption.p = new Element('p');
 			tmpcaption.p.innerHTML = text;
 			tmpcaption.appendChild(tmpcaption.p);
 			this.obj.appendChild(tmpcaption);
