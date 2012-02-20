@@ -206,6 +206,7 @@ var PictureSlider = new Class({
 			img.addClass('ps-frame-image');
 			img.src = image.src;
 			frame.appendChild(img);
+			var this_ = this;
 			img.addEvent('load', function() {
 				if (img.width/img.height > this_.width/this_.height) {
 					img.width = this_.width;
@@ -256,7 +257,7 @@ var PictureSlider = new Class({
 		});
 		
 		if (text) {
-			this_ = this;
+			var this_ = this;
 			fx.addEvent('complete', function() {
 				this_.caption.p.innerHTML = text;
 				this_.caption.p.fade(1);
