@@ -27,14 +27,14 @@ var PictureSlider = new Class({
 		center: true,
 		controls: {
 			opacity: 0.8,
-			duration: 'short',
+			duration: 'short'
 		},
 		caption: {
 			opacity: 0.8,
-			duration: 'short',
+			duration: 'short'
 		},
 		text: {
-			duration: 200,
+			duration: 200
 		}
 	},
 
@@ -111,8 +111,8 @@ var PictureSlider = new Class({
 				defaultEventType: 'keydown',
 				events: {
 					'left': function() { this_.left(); },
-					'right': function() { this_.right(); },
-				},
+					'right': function() { this_.right(); }
+				}
 			});
 			this.kb.activate();
 		}
@@ -253,7 +253,7 @@ var PictureSlider = new Class({
 		var fx = new Fx.Tween(this.caption, {
 			duration: this.options.text.duration,
 			property: 'height',
-			link: 'chain',
+			link: 'chain'
 		});
 		
 		if (text) {
@@ -278,6 +278,6 @@ var PictureSlider = new Class({
 			this.caption.p.fade(0);
 			fx.start(0);		
 		}
-	},
+	}
 });
 
