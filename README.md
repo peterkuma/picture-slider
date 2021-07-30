@@ -7,6 +7,8 @@ Optional caption is displayed in a panel at the bottom of the box.
 
 ![Screenshot](https://peterkuma.github.io/picture-slider/Screenshots/picture-slider.png)
 
+[Demo](https://peterkuma.net/picture-slider/Demo/)
+
 How to use
 ----------
 
