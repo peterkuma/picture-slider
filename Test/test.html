@@ -3,6 +3,7 @@
 	<head>
 		<title>PictureSlider Test</title>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools-nocompat.min.js"></script>
 		<script src="mootools-more-1.6.0.js"></script>
 		<script src="../Source/picture-slider.js"></script>
@@ -11,7 +12,7 @@
 	<body>
 		<h1>PictureSlider Test</h1>
 		<h2>General</h2>
-		<div id="pc-general" style="width: 900px; height: 600px"></div>
+		<div id="pc-general" style="width: 900px; height: 600px; max-width: 100%"></div>
 		<script>
 			document.addEvent('domready', function() {
 				var pc = new PictureSlider($('pc-general'), [
