@@ -145,9 +145,11 @@ var PictureSlider = new Class({
 			center = image.center;
 
 		if (img.width/img.height > this.width/this.height) {
-			img.width = this.width;
+			img.setStyle('width', this.width);
+			img.setStyle('height', 'auto');
 		} else {
-			img.height = this.height;
+			img.setStyle('width', 'auto');
+			img.setStyle('height', this.height);
 		}
 		if (center)
 			img.setStyle('top', (this.height-img.height)/2);
@@ -304,6 +306,7 @@ var PictureSlider = new Class({
 	 * Appends image to the end.
 	 */
 	appendImage: function(image) {
+		var this_ = this;
 		var frame;
 		if (image.link) {
 			frame = new Element('a');
@@ -322,7 +325,7 @@ var PictureSlider = new Class({
 			frame.appendChild(img);
 			var this_ = this;
 			img.addEvent('load', function() {
-				this.resizeImage(img, image);
+				this_.resizeImage(img, image);
 			});
 		}
 
