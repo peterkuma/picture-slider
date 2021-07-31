@@ -4,6 +4,7 @@
 	<head>
 		<title>PictureSlider Example</title>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="mootools.js"></script>
 		<script src="mootools-more.js"></script>
 		<script src="../Source/picture-slider.js"></script>
@@ -64,15 +65,22 @@ h3 {
 
 #container {
 	width: 1024px;
+	max-width: 100%;
 	margin: 0 auto;
+	position: relative;
 }
 
 #source {
 	border: 1px solid #ddd;
 	padding: 0 10px;
 	background: white;
-	overflow: auto;
 	margin-bottom: 40px;
+	max-width: 100%;
+}
+
+#source pre {
+	max-width: 100%;
+	overflow: auto;
 }
 
 .small {
@@ -113,7 +121,7 @@ h3 {
 			</a>
 		</div>
 		<div id="container">
-			<div id="keyboard-help" onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()"></div>
+			<!--<div id="keyboard-help" onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()"></div>
 			<div id="keyboard-shortcuts"><a onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()">Keyboard shortcuts</a></div>
 			<script type="text/javascript">
 function activateKeyboardHelp() {
@@ -123,8 +131,8 @@ function activateKeyboardHelp() {
 function deactivateKeyboardHelp() {
 	$('keyboard-help').fade(0);
 }
-			</script>
-			<div id="picture-slider" style="width: 1024px; height: 600px"></div>
+			</script>-->
+			<div id="picture-slider" style="width: 1024px; height: 600px; max-width: 100%"></div>
 			<script>
 document.addEvent('domready', function() {
 	var ps = new PictureSlider($('picture-slider'), [
@@ -169,9 +177,8 @@ document.addEvent('domready', function() {
 			</script>
 
 			<h3>Source:</h3>
-			<div id="source">
-
-<div class="highlight"><pre><span class="nt">&lt;head&gt;</span>
+			<div id="source" class="highlight">
+<pre><span class="nt">&lt;head&gt;</span>
 	...
 	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;mootools.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;mootools-more.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -223,8 +230,7 @@ document.addEvent('domready', function() {
 	<span class="p">]);</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
-</pre></div>
-
+</pre>
 			</div>
 		</div>
 	</body>
