@@ -104,6 +104,10 @@ The options available are described in the reference below.
 Release notes
 -------------
 
+* 0.7 (2021-07-31):
+	- Support for touch events.
+	- Support for resizing.
+	- Fixed keyboard events in Chrome.
 * 0.6 (2012-02-20):
 	- Fixed a number of issues with IE7.
 * 0.5 (2012-02-20):
@@ -243,4 +247,3 @@ Switch to the image on the right.
 
 [Events]: http://mootools.net/docs/core/Class/Class.Extras#Events
 [Options]: http://mootools.net/docs/core/Class/Class.Extras#Options
-
