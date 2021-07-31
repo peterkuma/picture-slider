@@ -52,7 +52,7 @@ In addition to images, you can also supply HTML content:
 			content: 'Text to appear inside the frame.',
 		}
 	]);
-	
+
 #### Notes:
 
 * By default, the content is centered in the vertical. For top alignment,
@@ -216,7 +216,7 @@ Switch to the image number n.
 		{'src': 'img2.jpg', caption: 'Second image.'},
 	]);
 	pc.switchTo(1) // Switch to the second image.
-	
+
 <h3 class="blue">PictureSlider Method: left</h3>
 
 Switch to the image on the left.
