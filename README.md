@@ -104,6 +104,8 @@ The options available are described in the reference below.
 Release notes
 -------------
 
+* 0.7.1 (2021-07-31):
+	- Fix image resizing.
 * 0.7 (2021-07-31):
 	- Support for touch events.
 	- Support for resizing.
