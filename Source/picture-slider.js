@@ -40,6 +40,8 @@ var PictureSlider = new Class({
 
 		this.obj = obj;
 		obj.addClass('picture-slider');
+		this.aspect  = this.obj.getStyle('width').toInt()/this.obj.getStyle('height').toInt();
+		this.resizeObj();
 
 		/* Determine width and height. */
 		var observer = new ResizeObserver(function() { this_.resize() });
@@ -68,7 +70,6 @@ var PictureSlider = new Class({
 		/* Controls. */
 		this.controls = new Element('div');
 		this.controls.addClass('ps-controls');
-		this.resizeControls();
 		this.controls.setStyle('opacity', 0);
 		this.controls.set('tween',  {duration: this.options.controls.duration});
 		this.obj.appendChild(this.controls);
@@ -77,7 +78,6 @@ var PictureSlider = new Class({
 		this.leftArrow.addClass('ps-left');
 		if (this.options.arrows)
 			this.leftArrow.addClass('ps-left-'+this.options.arrows);
-		this.leftArrow.setStyle('height', this.height);
 		this.leftArrow.setStyle('opacity', 0);
 		this.leftArrow.addEvent('click', function() { this_.left(); });
 		this.controls.appendChild(this.leftArrow);
@@ -86,9 +86,10 @@ var PictureSlider = new Class({
 		this.rightArrow.addClass('ps-right');
 		if (this.options.arrows)
 			this.rightArrow.addClass('ps-right-'+this.options.arrows);
-		this.rightArrow.setStyle('height', this.height);
 		this.rightArrow.setStyle('opacity', 0);
 		this.rightArrow.addEvent('click', function() { this_.right(); });
+
+		this.resizeControls();
 		this.controls.appendChild(this.rightArrow);
 
 		this.obj.addEvent('mouseover', function() { this_.activateControls(); });
@@ -115,6 +116,10 @@ var PictureSlider = new Class({
 		this.switchTo(0);
 	},
 
+	resizeObj: function() {
+		this.obj.setStyle('height', this.width/this.aspect);
+	},
+
 	resizeSheet: function() {
 		this.sheet.setStyle('width', this.width);
 		this.sheet.setStyle('height', this.height);
@@ -124,6 +129,8 @@ var PictureSlider = new Class({
 	resizeControls: function() {
 		this.controls.setStyle('width', this.width);
 		this.controls.setStyle('height', this.height);
+		this.leftArrow.setStyle('height', this.height);
+		this.rightArrow.setStyle('height', this.height);
 	},
 
 	resizeFrame: function(frame, i) {
@@ -160,6 +167,9 @@ var PictureSlider = new Class({
 		if (typeof image.center != 'undefined')
 			center = image.center;
 
+		var scale = this.width/this.obj.getStyle('width').toInt();
+		content.setStyle('transform', 'scale(' + scale + ')');
+
 		var w = content.getStyle('width').toInt();
 		var pad = content.getStyle('padding-left').toInt() +
 			content.getStyle('padding-right').toInt();
@@ -173,8 +183,7 @@ var PictureSlider = new Class({
 			var mar = content.getStyle('margin-top').toInt() +
 				content.getStyle('margin-bottom').toInt();
 			var top = (this.height-h-pad-mar)/2;
-			if (top > 0)
-				content.setStyle('top', (this.height-h-pad-mar)/2);
+			content.setStyle('top', top);
 		}
 	},
 
@@ -187,6 +196,7 @@ var PictureSlider = new Class({
 		this.width = this.obj.getSize().x;
 		this.height = this.obj.getSize().y;
 		if (this.initialized) {
+			this.resizeObj();
 			this.resizeSheet();
 			this.resizeControls();
 			this.sheet.getChildren().each(function(frame, i) {
