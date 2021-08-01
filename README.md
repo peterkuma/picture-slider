@@ -102,6 +102,8 @@ The options available are described in the reference below.
 Release notes
 -------------
 
+* 0.7.4 (2021-08-01):
+	- Fixed freezing when mouse moves out of the element.
 * 0.7.3 (2021-08-01):
 	- Fixed switching of captions.
 * 0.7.2 (2021-08-01):
