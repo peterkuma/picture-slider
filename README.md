@@ -104,6 +104,8 @@ The options available are described in the reference below.
 Release notes
 -------------
 
+* 0.7.2 (2021-08-01):
+	- Fix resizing and scaling of content.
 * 0.7.1 (2021-07-31):
 	- Fix image resizing.
 * 0.7 (2021-07-31):
