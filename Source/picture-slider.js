@@ -97,6 +97,7 @@ var PictureSlider = new Class({
 		this.obj.addEvent('mousedown', function(ev) { this_.dragStart(ev) });
 		this.obj.addEvent('mousemove', function(ev) { this_.drag(ev) });
 		this.obj.addEvent('mouseup', function(ev) { this_.dragStop(ev) });
+		this.obj.addEvent('mouseleave', function(ev) { this_.dragStop(ev) });
 		this.obj.addEvent('touchmove', function(ev) { this_.dragStart(ev); this_.drag(ev); });
 		this.obj.addEvent('touchend', function(ev) { this_.dragStop(ev); });
 
