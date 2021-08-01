@@ -96,12 +96,11 @@ ps-controls {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	color: white;
-	font-size: 10pt;
-	font-family: "Tahoma", sans-serif;
 }
 
 .ps-caption p {
+	color: white;
+	font-size: 10pt;
+	font-family: "Tahoma", sans-serif;
 	margin: 10px;
 }
-
