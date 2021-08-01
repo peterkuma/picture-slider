@@ -356,7 +356,10 @@ var PictureSlider = new Class({
 	 * Set caption to text.
 	 */
 	setCaption: function(text) {
-		var fx = new Fx.Tween(this.caption, {
+		if (this.fxCaption) {
+			this.fxCaption.stop();
+		}
+		this.fxCaption = new Fx.Tween(this.caption, {
 			duration: this.options.text.duration,
 			property: 'height',
 			link: 'chain'
@@ -364,7 +367,7 @@ var PictureSlider = new Class({
 
 		if (text) {
 			var this_ = this;
-			fx.addEvent('complete', function() {
+			this.fxCaption.addEvent('complete', function() {
 				this_.caption.p.innerHTML = text;
 				this_.caption.p.fade(1);
 			});
@@ -378,11 +381,11 @@ var PictureSlider = new Class({
 			this.obj.appendChild(tmpcaption);
 			h = tmpcaption.getStyle('height');
 			this.obj.removeChild(tmpcaption);
-			fx.start(h);
+			this.fxCaption.start(h);
 		} else {
 			this.caption.p.innerHTML = '';
 			this.caption.p.fade(0);
-			fx.start(0);
+			this.fxCaption.start(0);
 		}
 	}
 });
