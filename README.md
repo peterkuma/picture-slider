@@ -19,7 +19,6 @@ describing the image source and an optional caption:
 	<head>
 		...
 		<script src="mootools.js"></script>
-		<script src="mootools-more.js"></script>
 		<script src="picture-slider/Source/picture-slider.js"></script>
 		<link rel="stylesheet" type="text/css" href="picture-slider/Source/picture-slider.css" />
 	</head>
@@ -61,8 +60,7 @@ append 'center: false,' below the `content` attribute.
 Keyboard
 --------
 
-The images can be switched by the left and right keyboard arrows,
-providing the MooTools More Keyboard component is loaded.
+The images can be switched by the left and right keyboard arrows.
 
 Styling
 -------
