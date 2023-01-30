@@ -1,11 +1,252 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>PictureSlider</title>
-		<meta http-equiv="Refresh" content="0;url=https://peterkuma.github.io/picture-slider/Demo/">
-	</head>
+
+<html lang="en">
+<head>
+<title>PictureSlider Example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="mootools.js"></script>
+<script src="src/picture-slider.js"></script>
+<link rel="stylesheet" type="text/css" href="src/picture-slider.css" />
+<link rel="stylesheet" type="text/css" href="pygment.css" />
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Istok+Web:700);
+
+body {
+	background: #f3f3f3;
+	margin: 0;
+	font-family: helvetica, sans-serif;
+	font-size: 12pt;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	background: white;
+	border-bottom: 1px solid #aaa;
+	box-shadow: 0 0 10px 10px #eeeeee;
+}
+
+header a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+}
+
+h1 {
+	margin: 0px;
+	color: #444;
+	font-family: 'Istok Web', helvetica, sans-serif;
+	font-size: 16pt;
+	text-align: center;
+}
+
+h1 .colon {
+	font-weight: normal;
+	color: #ddd;
+}
+
+h1 .example {
+	color: #aaa;
+	font-size: 12pt;
+}
+
+h3 {
+	font-size: 14pt;
+	margin: 10px 0;
+}
+
+#picture-slider {
+	margin: 20px auto;
+	box-shadow: 0 0 2px 2px #888;
+	max-width: 100%;
+}
+
+main {
+	width: 1024px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+article {
+	margin: 5px;
+}
+
+#source {
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	background: white;
+	max-width: 100%;
+}
+
+#source pre {
+	max-width: 100%;
+	overflow: auto;
+}
+
+.small {
+	font-size: 60%;
+}
+
+#keyboard-shortcuts {
+	font-size: 10pt;
+	text-align: right;
+}
+
+#keyboard-shortcuts a {
+	text-decoration: none;
+	color: #333;
+}
+
+#keyboard-shortcuts a:hover {
+	text-decoration: underline;
+}
+
+#keyboard-help {
+	opacity: 0;
+	background: url("keyboard-help.png");
+	width: 130px;
+	height: 70px;
+	float: right;
+	margin-left: -130px;
+	position: relative;
+	left: 135px;
+	top: -12px;
+}
+
+@media (max-width: 500px) {
+	body {
+		font-size: 8pt;
+	}
+
+	.ps-caption p {
+		font-size: 8pt;
+		margin: 4px;
+	}
+}
+</style>
+</head>
 <body>
-<p>You shold be redirected to <a href="https://peterkuma.github.io/picture-slider/Demo/">https://peterkuma.github.io/picture-slider/Demo/</a> shortly.</p>
+<header>
+<a href="http://mootools.net/forge/p/pictureslider">
+<h1>PictureSlider <span class="colon">|</span> <span class="example">example</span></h1>
+</a>
+</header>
+<main>
+<article>
+			<!--<div id="keyboard-help" onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()"></div>
+			<div id="keyboard-shortcuts"><a onmouseover="activateKeyboardHelp()" onmouseout="deactivateKeyboardHelp()">Keyboard shortcuts</a></div>
+			<script type="text/javascript">
+function activateKeyboardHelp() {
+	$('keyboard-help').set('tween', {'duration': 'short'});
+	$('keyboard-help').fade(1);
+}
+function deactivateKeyboardHelp() {
+	$('keyboard-help').fade(0);
+}
+			</script>-->
+<div id="picture-slider" style="width: 1024px; height: 600px"></div>
+<script>
+document.addEvent('domready', function() {
+	var ps = new PictureSlider($('picture-slider'), [
+		{
+			src: 'img/606394main_Wheels_Spinning_Still-br2.jpg',
+			caption: '<strong>Wheels Installed On Curiosity.</strong> Originally taken in July 2010, this photo shows NASA engineers installing six wheels on the Curiosity rover.'
+		},
+		{
+			src: 'img/582750main_sunrise_from_iss-4x3.jpg',
+			caption: 'On Saturday, Aug. 27, 2011, International Space Station astronaut Ron Garan used a high definition camera to film one of the sixteen sunrises astronauts see each day. This image shows the rising sun as the station flew along a path between Rio de Janeiro, Brazil and Buenos Aires, Argentina.'
+		},
+		{
+			src: 'img/563359main_image_1984.jpg',
+			caption: 'Attired in a training version of his Extravehicular Mobility Unit spacesuit, NASA astronaut Mike Fossum participated in spacewalk training in the waters of the Neutral Buoyancy Laboratory near NASA\'s Johnson Space Center. Divers in the water assisted Fossum in his rehearsal, which helps prepare him and his fellow astronauts for work on the exterior of the International Space Station.'
+		},
+		{
+			src: 'img/575389main_image_2021.jpg',
+			caption: '<em>5...4...3...2...1...release.</em> With that countdown, the Apollo-like test article that is a base model for the agency\'s future Orion Multi-Purpose Crew Vehicle, took flight swinging across the sky — nearing 50 mph (80.5 kph) — at NASA Langley\'s Landing and Impact Research Facility.'
+		},
+		{
+			src: 'img/605776main_image_2114.jpg',
+			caption: 'Russian support personnel work to help get crew members out of the Soyuz TMA-02M spacecraft shortly after the capsule landed with Expedition 29 Commander Mike Fossum and flight engineers Sergei Volkov and Satoshi Furukawa in a remote area outside of the town of Arkalyk, Kazakhstan'
+		},
+		{
+			src: 'img/616904main_rover_comparison_full.jpg',
+			caption: '<strong>Three Generations of Rovers with Crouching Engineers.</strong> Two spacecraft engineers join a grouping of vehicles providing a comparison of three generations of Mars rovers developed at NASA\'s Jet Propulsion Laboratory, Pasadena, Calif. The setting is JPL\'s Mars Yard testing area.'
+		},
+		{
+			src: 'img/614411main_iss_cupola.jpg',
+			caption: 'This unusual image was photographed through the Cupola on the International Space Station by one of the Expedition 30 crew members. The lake just above the bracket-mounted camera at center is Egirdir Golu in Turkey. A Russian Soyuz spacecraft is docked to the station at lower right and part of the Permanent Multipurpose Module (PMM) can be seen just above it.'
+		},
+		{
+			src: 'img/580910main_image_2040.jpg',
+			caption: '<strong>Elmo and STS-135 Commander Chris Ferguson.</strong> The crew of STS-135, NASA\'s final space shuttle mission, and Sesame Street\'s Elmo welcomed visitors to "What\'s Your Favorite Space?" in New York City.'
+		},
+		{
+			content: '<p class="small">Pictures adopted from:</p><p><span style="color: #fdca01">NASA Image of the Day Gallery</span></p><p><a href="http://www.nasa.gov/multimedia/">www.nasa.gov/multimedia/</a></span></p>',
+			link: 'http://www.nasa.gov/multimedia/'
+		}
+	]);
+});
+</script>
+
+<h3>Source:</h3>
+<div id="source" class="highlight">
+<pre><span class="nt">&lt;head&gt;</span>
+	...
+	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;mootools.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;mootools-more.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;src/picture-slider.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;src/picture-slider.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+...
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;picture-slider&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 1024px; height: 600px&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEvent</span><span class="p">(</span><span class="s1">&#39;domready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">ps</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PictureSlider</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;picture-slider&#39;</span><span class="p">),</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/606394main_Wheels_Spinning_Still-br2.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;&lt;strong&gt;Wheels Installed On Curiosity.&lt;/strong&gt; Originally taken in July 2010, this photo shows NASA engineers installing six wheels on the Curiosity rover.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/582750main_sunrise_from_iss-4x3.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;On Saturday, Aug. 27, 2011, International Space Station astronaut Ron Garan used a high definition camera to film one of the sixteen sunrises astronauts see each day. This image shows the rising sun as the station flew along a path between Rio de Janeiro, Brazil and Buenos Aires, Argentina.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/563359main_image_1984.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;Attired in a training version of his Extravehicular Mobility Unit spacesuit, NASA astronaut Mike Fossum participated in spacewalk training in the waters of the Neutral Buoyancy Laboratory near NASA\&#39;s Johnson Space Center. Divers in the water assisted Fossum in his rehearsal, which helps prepare him and his fellow astronauts for work on the exterior of the International Space Station.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/575389main_image_2021.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;&lt;em&gt;5...4...3...2...1...release.&lt;/em&gt; With that countdown, the Apollo-like test article that is a base model for the agency\&#39;s future Orion Multi-Purpose Crew Vehicle, took flight swinging across the sky — nearing 50 mph (80.5 kph) — at NASA Langley\&#39;s Landing and Impact Research Facility.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/605776main_image_2114.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;Russian support personnel work to help get crew members out of the Soyuz TMA-02M spacecraft shortly after the capsule landed with Expedition 29 Commander Mike Fossum and flight engineers Sergei Volkov and Satoshi Furukawa in a remote area outside of the town of Arkalyk, Kazakhstan&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/616904main_rover_comparison_full.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;&lt;strong&gt;Three Generations of Rovers with Crouching Engineers.&lt;/strong&gt; Two spacecraft engineers join a grouping of vehicles providing a comparison of three generations of Mars rovers developed at NASA\&#39;s Jet Propulsion Laboratory, Pasadena, Calif. The setting is JPL\&#39;s Mars Yard testing area.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/614411main_iss_cupola.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;This unusual image was photographed through the Cupola on the International Space Station by one of the Expedition 30 crew members. The lake just above the bracket-mounted camera at center is Egirdir Golu in Turkey. A Russian Soyuz spacecraft is docked to the station at lower right and part of the Permanent Multipurpose Module (PMM) can be seen just above it.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;img/580910main_image_2040.jpg&#39;</span><span class="p">,</span>
+			<span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;&lt;strong&gt;Elmo and STS-135 Commander Chris Ferguson.&lt;/strong&gt; The crew of STS-135, NASA\&#39;s final space shuttle mission, and Sesame Street\&#39;s Elmo welcomed visitors to &quot;What\&#39;s Your Favorite Space?&quot; in New York City.&#39;</span><span class="p"></span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;&lt;p class=&quot;small&quot;&gt;Pictures adopted from:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: #fdca01&quot;&gt;NASA Image of the Day Gallery&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://www.nasa.gov/multimedia/&quot;&gt;www.nasa.gov/multimedia/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#39;</span><span class="p">,</span>
+			<span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;http://www.nasa.gov/multimedia/&#39;</span><span class="p"></span>
+		<span class="p">}</span>
+	<span class="p">]);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre>
+</div>
+</article>
+</main>
 </body>
 </html>
 
