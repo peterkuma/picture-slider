@@ -14,7 +14,7 @@ Deployment
 
 1. Download this repository.
 2. Download [mootools](https://mootools.net/core).
-3. Include `mootools.js`, `src/picture-slider.js` and `src/picture-slider.css`
+3. Import `mootools.js`, `src/picture-slider.js` and `src/picture-slider.css`
 in your HTML file as in the example below.
 
 How to use
