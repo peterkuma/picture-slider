@@ -24,18 +24,18 @@ describing the image source and an optional caption:
 	</head>
 	...
 
-    <div id="picture-slider" style="width: 900px; height: 600px"></div>
+	<div id="picture-slider" style="width: 900px; height: 600px"></div>
 	<script>
 		document.addEvent('domready', function() {
 			var pc = new PictureSlider($('picture-slider'), [
-			    {
-			        src: 'image1.jpg',
-			        caption: 'Description of image1.',
-			    },
-			    {
-			        src: 'image2.jpg',
-			        caption: 'Description of image2.',
-			    },
+				{
+					src: 'image1.jpg',
+					caption: 'Description of image1.',
+				},
+				{
+					src: 'image2.jpg',
+					caption: 'Description of image2.',
+				},
 			]);
 		});
 	</script>
@@ -80,8 +80,8 @@ The options available are described in the reference below.
 		},
 		{
 			src: 'image2.jpg',
-		    caption: 'Description of image2.',
-	    },
+			caption: 'Description of image2.',
+		},
 	], {
 		arrows: 'small',
 		duration: 'long',
