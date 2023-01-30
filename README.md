@@ -5,7 +5,7 @@ PictureSlider allows you to create an unobtrusive and easy-to-control
 picture preview box, controlled by two arrows on the sides, or by keyboard.
 Optional caption is displayed in a panel at the bottom of the box.
 
-<img src="img/picture-slider.png" alt="PictureSlider" width="185" />
+<img src="picture-slider.png" alt="PictureSlider" width="185" />
 
 [Demo](https://picture-slider.peterkuma.net)
 
