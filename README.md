@@ -5,9 +5,17 @@ PictureSlider allows you to create an unobtrusive and easy-to-control
 picture preview box, controlled by two arrows on the sides, or by keyboard.
 Optional caption is displayed in a panel at the bottom of the box.
 
-<img src="https://picture-slider.peterkuma.net/Screenshots/picture-slider.png" alt="PictureSlider" width="185" />
+<img src="img/picture-slider.png" alt="PictureSlider" width="185" />
 
 [Demo](https://picture-slider.peterkuma.net)
+
+Deployment
+----------
+
+1. Download this repository.
+2. Download [https://mootools.net/core](mootools).
+3. Include `mootools.js`, `src/picture-slider.js` and `src/picture-slider.css`
+in your HTML file as in the example below.
 
 How to use
 ----------
@@ -19,8 +27,8 @@ describing the image source and an optional caption:
 	<head>
 		...
 		<script src="mootools.js"></script>
-		<script src="picture-slider/Source/picture-slider.js"></script>
-		<link rel="stylesheet" type="text/css" href="picture-slider/Source/picture-slider.css" />
+		<script src="picture-slider/src/picture-slider.js"></script>
+		<link rel="stylesheet" type="text/css" href="picture-slider/src/picture-slider.css" />
 	</head>
 	...
 
@@ -41,6 +49,7 @@ describing the image source and an optional caption:
 	</script>
 
 #### Notes:
+
 * The size of the box is set by the width and height style attributes of the div.
 * If the caption key is left out, the bottom panel is not shown.
 
@@ -66,7 +75,7 @@ Styling
 -------
 
 The picture slider can be styled by amending
-or extending the CSS defined in Source/picture-slider.css.
+or extending the CSS defined in src/picture-slider.css.
 
 Options can be supplied as the third argument to the constructor.
 The options available are described in the reference below.
